@@ -1,0 +1,125 @@
+
+instance BDT_1099_ADDON_HUNO(NPC_DEFAULT)
+{
+	name[0] = "Huno";
+	guild = GIL_BDT;
+	id = 1099;
+	voice = 6;
+	flags = 0;
+	npctype = NPCTYPE_MAIN;
+	b_setattributestochapter(self,3);
+	fight_tactic = FAI_HUMAN_NORMAL;
+	EquipItem(self,itmw_1h_sld_sword);
+	b_createambientinv(self);
+	b_setnpcvisual(self,MALE,"Hum_Head_Bald",FACE_N_NORMALBART_HUNO,BODYTEX_N,itar_smith);
+	Mdl_SetModelFatness(self,1);
+	Mdl_ApplyOverlayMds(self,"Humans_Relaxed.mds");
+	b_givenpctalents(self);
+	b_setfightskills(self,65);
+	daily_routine = rtn_prestart_1099;
+};
+
+
+func void rtn_prestart_1099()
+{
+	ta_smith_anvil(6,0,12,0,"BL_UP_02");
+	ta_smith_sharp(12,0,18,0,"BL_SMITH_YARD_02");
+	ta_smith_anvil(18,0,23,0,"BL_UP_02");
+	ta_sleep(23,0,6,0,"BL_SMITH_SLEEP");
+};
+
+func void rtn_start_1099()
+{
+	ta_sleep(22,0,7,0,"BL_SMITH_SLEEP");
+	ta_smith_fire(7,0,7,10,"BL_SMITH_FIRE");
+	ta_smith_anvil(7,10,7,20,"BL_SMITH_ANVIL");
+	ta_smith_fire(7,20,7,30,"BL_SMITH_FIRE");
+	ta_smith_anvil(7,30,7,40,"BL_SMITH_ANVIL");
+	ta_smith_cool(7,40,7,50,"BL_SMITH_COOL");
+	ta_smith_anvil(7,50,8,0,"BL_SMITH_ANVIL");
+	ta_smith_fire(8,0,8,10,"BL_SMITH_FIRE");
+	ta_smith_anvil(8,10,8,20,"BL_SMITH_ANVIL");
+	ta_smith_fire(8,20,8,30,"BL_SMITH_FIRE");
+	ta_smith_anvil(8,30,8,40,"BL_SMITH_ANVIL");
+	ta_smith_cool(8,40,8,50,"BL_SMITH_COOL");
+	ta_smith_anvil(8,50,9,0,"BL_SMITH_ANVIL");
+	ta_smith_fire(9,0,9,10,"BL_SMITH_FIRE");
+	ta_smith_anvil(9,10,9,20,"BL_SMITH_ANVIL");
+	ta_smith_fire(9,20,9,30,"BL_SMITH_FIRE");
+	ta_smith_anvil(9,30,9,40,"BL_SMITH_ANVIL");
+	ta_smith_cool(9,40,9,50,"BL_SMITH_COOL");
+	ta_smith_anvil(9,50,10,0,"BL_SMITH_ANVIL");
+	ta_smith_fire(10,0,10,10,"BL_SMITH_FIRE");
+	ta_smith_anvil(10,10,10,20,"BL_SMITH_ANVIL");
+	ta_smith_fire(10,20,10,30,"BL_SMITH_FIRE");
+	ta_smith_anvil(10,30,10,40,"BL_SMITH_ANVIL");
+	ta_smith_cool(10,40,10,50,"BL_SMITH_COOL");
+	ta_smith_anvil(10,50,11,0,"BL_SMITH_ANVIL");
+	ta_smith_fire(11,0,11,10,"BL_SMITH_FIRE");
+	ta_smith_anvil(11,10,11,20,"BL_SMITH_ANVIL");
+	ta_smith_fire(11,20,11,30,"BL_SMITH_FIRE");
+	ta_smith_anvil(11,30,11,40,"BL_SMITH_ANVIL");
+	ta_smith_cool(11,40,11,50,"BL_SMITH_COOL");
+	ta_smith_anvil(11,50,12,0,"BL_SMITH_ANVIL");
+	ta_smith_fire(12,0,12,10,"BL_SMITH_FIRE");
+	ta_smith_anvil(12,10,12,20,"BL_SMITH_ANVIL");
+	ta_smith_fire(12,20,12,30,"BL_SMITH_FIRE");
+	ta_smith_anvil(12,30,12,40,"BL_SMITH_ANVIL");
+	ta_smith_cool(12,40,12,50,"BL_SMITH_COOL");
+	ta_smith_anvil(12,50,13,0,"BL_SMITH_ANVIL");
+	ta_smith_fire(13,0,13,10,"BL_SMITH_FIRE");
+	ta_smith_anvil(13,10,13,20,"BL_SMITH_ANVIL");
+	ta_smith_fire(13,20,13,30,"BL_SMITH_FIRE");
+	ta_smith_anvil(13,30,13,40,"BL_SMITH_ANVIL");
+	ta_smith_cool(13,40,13,50,"BL_SMITH_COOL");
+	ta_smith_anvil(13,50,14,0,"BL_SMITH_ANVIL");
+	ta_smith_fire(14,0,14,10,"BL_SMITH_FIRE");
+	ta_smith_anvil(14,10,14,20,"BL_SMITH_ANVIL");
+	ta_smith_fire(14,20,14,30,"BL_SMITH_FIRE");
+	ta_smith_anvil(14,30,14,40,"BL_SMITH_ANVIL");
+	ta_smith_cool(14,40,14,50,"BL_SMITH_COOL");
+	ta_smith_anvil(14,50,15,0,"BL_SMITH_ANVIL");
+	ta_smith_fire(15,0,15,10,"BL_SMITH_FIRE");
+	ta_smith_anvil(15,10,15,20,"BL_SMITH_ANVIL");
+	ta_smith_fire(15,20,15,30,"BL_SMITH_FIRE");
+	ta_smith_anvil(15,30,15,40,"BL_SMITH_ANVIL");
+	ta_smith_cool(15,40,15,50,"BL_SMITH_COOL");
+	ta_smith_anvil(15,50,16,0,"BL_SMITH_ANVIL");
+	ta_smith_fire(16,0,16,10,"BL_SMITH_FIRE");
+	ta_smith_anvil(16,10,16,20,"BL_SMITH_ANVIL");
+	ta_smith_fire(16,20,16,30,"BL_SMITH_FIRE");
+	ta_smith_anvil(16,30,16,40,"BL_SMITH_ANVIL");
+	ta_smith_cool(16,40,16,50,"BL_SMITH_COOL");
+	ta_smith_anvil(16,50,17,0,"BL_SMITH_ANVIL");
+	ta_smith_fire(17,0,17,10,"BL_SMITH_FIRE");
+	ta_smith_anvil(17,10,17,20,"BL_SMITH_ANVIL");
+	ta_smith_fire(17,20,17,30,"BL_SMITH_FIRE");
+	ta_smith_anvil(17,30,17,40,"BL_SMITH_ANVIL");
+	ta_smith_cool(17,40,17,50,"BL_SMITH_COOL");
+	ta_smith_anvil(17,50,18,0,"BL_SMITH_ANVIL");
+	ta_smith_fire(18,0,18,10,"BL_SMITH_FIRE");
+	ta_smith_anvil(18,10,18,20,"BL_SMITH_ANVIL");
+	ta_smith_fire(18,20,18,30,"BL_SMITH_FIRE");
+	ta_smith_anvil(18,30,18,40,"BL_SMITH_ANVIL");
+	ta_smith_cool(18,40,18,50,"BL_SMITH_COOL");
+	ta_smith_anvil(18,50,19,0,"BL_SMITH_ANVIL");
+	ta_smith_fire(19,0,19,10,"BL_SMITH_FIRE");
+	ta_smith_anvil(19,10,19,20,"BL_SMITH_ANVIL");
+	ta_smith_fire(19,20,19,30,"BL_SMITH_FIRE");
+	ta_smith_anvil(19,30,19,40,"BL_SMITH_ANVIL");
+	ta_smith_cool(19,40,19,50,"BL_SMITH_COOL");
+	ta_smith_anvil(19,50,20,0,"BL_SMITH_ANVIL");
+	ta_smith_fire(20,0,20,10,"BL_SMITH_FIRE");
+	ta_smith_anvil(20,10,20,20,"BL_SMITH_ANVIL");
+	ta_smith_fire(20,20,20,30,"BL_SMITH_FIRE");
+	ta_smith_anvil(20,30,20,40,"BL_SMITH_ANVIL");
+	ta_smith_cool(20,40,20,50,"BL_SMITH_COOL");
+	ta_smith_anvil(20,50,21,0,"BL_SMITH_ANVIL");
+	ta_smith_fire(21,0,21,10,"BL_SMITH_FIRE");
+	ta_smith_anvil(21,10,21,20,"BL_SMITH_ANVIL");
+	ta_smith_fire(21,20,21,30,"BL_SMITH_FIRE");
+	ta_smith_anvil(21,30,21,40,"BL_SMITH_ANVIL");
+	ta_smith_cool(21,40,21,50,"BL_SMITH_COOL");
+	ta_smith_anvil(21,50,22,0,"BL_SMITH_ANVIL");
+};
+

@@ -1,0 +1,360 @@
+
+prototype MST_ADDON_STONEGUARDIAN(C_NPC)
+{
+	name[0] = "Kamienny stra¿nik";
+	guild = GIL_STONEGUARDIAN;
+	aivar[AIV_MM_REAL_ID] = ID_STONEGUARDIAN;
+	level = 18;
+	bodystateinterruptableoverride = TRUE;
+	attribute[ATR_STRENGTH] = 90;
+	attribute[ATR_DEXTERITY] = 90;
+	attribute[ATR_HITPOINTS_MAX] = 180;
+	attribute[ATR_HITPOINTS] = 180;
+	attribute[ATR_MANA_MAX] = 0;
+	attribute[ATR_MANA] = 0;
+	protection[PROT_BLUNT] = 40;
+	protection[PROT_EDGE] = 90;
+	protection[PROT_POINT] = 140;
+	protection[PROT_FIRE] = 90;
+	protection[PROT_FLY] = 90;
+	protection[PROT_MAGIC] = 90;
+	damagetype = DAM_EDGE;
+	fight_tactic = FAI_STONEGUARDIAN;
+	senses = SENSE_HEAR | SENSE_SEE | SENSE_SMELL;
+	senses_range = PERC_DIST_MONSTER_ACTIVE_MAX;
+	aivar[AIV_MM_FOLLOWTIME] = FOLLOWTIME_MEDIUM;
+	aivar[AIV_MM_FOLLOWINWATER] = FALSE;
+	start_aistate = zs_mm_allscheduler;
+	aivar[AIV_MM_RESTSTART] = ONLYROUTINE;
+	Npc_SetToFistMode(self);
+};
+
+func void b_setvisuals_stoneguardian()
+{
+	Mdl_SetVisual(self,"StoneGuardian.mds");
+	Mdl_SetVisualBody(self,"StG_Body",DEFAULT,DEFAULT,"",DEFAULT,DEFAULT,-1);
+};
+
+
+instance SUMMONED_GUARDIAN(MST_ADDON_STONEGUARDIAN)
+{
+	name[0] = name_addon_summoned_guardian;
+	guild = GIL_SUMMONEDGUARDIAN;
+	aivar[AIV_MM_REAL_ID] = ID_SUMMONEDGUARDIAN;
+	level = 0;
+	attribute[ATR_STRENGTH] = 100;
+	attribute[ATR_DEXTERITY] = 150;
+	attribute[ATR_HITPOINTS_MAX] = 150;
+	attribute[ATR_HITPOINTS] = 150;
+	protection[PROT_BLUNT] = 75;
+	protection[PROT_EDGE] = 125;
+	protection[PROT_POINT] = 175;
+	protection[PROT_FIRE] = 125;
+	protection[PROT_FLY] = 125;
+	aivar[AIV_PARTYMEMBER] = TRUE;
+	b_setattitude(self,ATT_FRIENDLY);
+	start_aistate = zs_mm_rtn_summoned;
+	b_setvisuals_stoneguardian();
+};
+
+instance STONEGUARDIAN(MST_ADDON_STONEGUARDIAN)
+{
+	b_setvisuals_stoneguardian();
+};
+
+instance STONEGUARDIAN_MINEDEAD1(MST_ADDON_STONEGUARDIAN)
+{
+	b_setvisuals_stoneguardian();
+};
+
+instance STONEGUARDIAN_MINEDEAD2(MST_ADDON_STONEGUARDIAN)
+{
+	b_setvisuals_stoneguardian();
+};
+
+instance STONEGUARDIAN_MINEDEAD3(MST_ADDON_STONEGUARDIAN)
+{
+	b_setvisuals_stoneguardian();
+};
+
+instance STONEGUARDIAN_MINEDEAD4(MST_ADDON_STONEGUARDIAN)
+{
+	b_setvisuals_stoneguardian();
+};
+
+instance STONEGUARDIAN_DEAD1(MST_ADDON_STONEGUARDIAN)
+{
+	b_setvisuals_stoneguardian();
+	CreateInvItems(self,itwr_hitpointstoneplate1_addon,1);
+};
+
+instance STONEGUARDIAN_DEAD2(MST_ADDON_STONEGUARDIAN)
+{
+	b_setvisuals_stoneguardian();
+};
+
+instance STONEGUARDIAN_DEAD3(MST_ADDON_STONEGUARDIAN)
+{
+	b_setvisuals_stoneguardian();
+};
+
+instance STONEGUARDIAN_MERDARIONSSCHLUESSEL(MST_ADDON_STONEGUARDIAN)
+{
+	b_setvisuals_stoneguardian();
+	CreateInvItems(self,itke_portaltempelwalkthrough_addon,1);
+};
+
+instance STONEGUARDIAN_ORNAMENT(MST_ADDON_STONEGUARDIAN)
+{
+	b_setvisuals_stoneguardian();
+	CreateInvItem(self,itmi_ornament_addon);
+};
+
+instance STONEGUARDIAN_HEILER(MST_ADDON_STONEGUARDIAN)
+{
+	b_setvisuals_stoneguardian();
+	CreateInvItems(self,itke_addon_heiler,1);
+};
+
+instance STONEGUARDIAN_SANI01(MST_ADDON_STONEGUARDIAN)
+{
+	b_setvisuals_stoneguardian();
+	aivar[AIV_ENEMYOVERRIDE] = TRUE;
+};
+
+instance STONEGUARDIAN_SANI02(MST_ADDON_STONEGUARDIAN)
+{
+	b_setvisuals_stoneguardian();
+	aivar[AIV_ENEMYOVERRIDE] = TRUE;
+};
+
+instance STONEGUARDIAN_SANI03(MST_ADDON_STONEGUARDIAN)
+{
+	b_setvisuals_stoneguardian();
+	aivar[AIV_ENEMYOVERRIDE] = TRUE;
+};
+
+instance STONEGUARDIAN_SANI04(MST_ADDON_STONEGUARDIAN)
+{
+	b_setvisuals_stoneguardian();
+	aivar[AIV_ENEMYOVERRIDE] = TRUE;
+};
+
+instance STONEGUARDIAN_SANI05(MST_ADDON_STONEGUARDIAN)
+{
+	b_setvisuals_stoneguardian();
+	aivar[AIV_ENEMYOVERRIDE] = TRUE;
+};
+
+instance STONEGUARDIAN_SANI06(MST_ADDON_STONEGUARDIAN)
+{
+	b_setvisuals_stoneguardian();
+	aivar[AIV_ENEMYOVERRIDE] = TRUE;
+};
+
+instance STONEGUARDIAN_NAILEDPORTALADW1(MST_ADDON_STONEGUARDIAN)
+{
+	aivar[AIV_MAXDISTTOWP] = 2400;
+	aivar[AIV_ORIGINALFIGHTTACTIC] = FAI_STONEGUARDIAN;
+	aivar[AIV_ENEMYOVERRIDE] = TRUE;
+	b_setvisuals_stoneguardian();
+};
+
+instance STONEGUARDIAN_NAILEDPORTALADW2(MST_ADDON_STONEGUARDIAN)
+{
+	aivar[AIV_MAXDISTTOWP] = 3100;
+	aivar[AIV_ORIGINALFIGHTTACTIC] = FAI_STONEGUARDIAN;
+	aivar[AIV_ENEMYOVERRIDE] = TRUE;
+	b_setvisuals_stoneguardian();
+};
+
+instance STONEGUARDIAN_NAILEDVALLEYSHOWCASE_01(MST_ADDON_STONEGUARDIAN)
+{
+	aivar[AIV_MAXDISTTOWP] = 2000;
+	aivar[AIV_ORIGINALFIGHTTACTIC] = FAI_STONEGUARDIAN;
+	b_setvisuals_stoneguardian();
+};
+
+instance STONEGUARDIAN_NAILEDVALLEYSHOWCASE_02(MST_ADDON_STONEGUARDIAN)
+{
+	aivar[AIV_MAXDISTTOWP] = 1000;
+	aivar[AIV_ORIGINALFIGHTTACTIC] = FAI_STONEGUARDIAN;
+	b_setvisuals_stoneguardian();
+};
+
+instance STONEGUARDIAN_ADANOSTEMPELENTRANCE_01(MST_ADDON_STONEGUARDIAN)
+{
+	aivar[AIV_MAXDISTTOWP] = 2000;
+	aivar[AIV_ORIGINALFIGHTTACTIC] = FAI_STONEGUARDIAN;
+	aivar[AIV_ENEMYOVERRIDE] = TRUE;
+	b_setvisuals_stoneguardian();
+};
+
+instance STONEGUARDIAN_ADANOSTEMPELENTRANCE_02(MST_ADDON_STONEGUARDIAN)
+{
+	aivar[AIV_MAXDISTTOWP] = 2000;
+	aivar[AIV_ORIGINALFIGHTTACTIC] = FAI_STONEGUARDIAN;
+	aivar[AIV_ENEMYOVERRIDE] = TRUE;
+	b_setvisuals_stoneguardian();
+};
+
+instance STONEGUARDIAN_ADANOSTEMPELENTRANCE_03(MST_ADDON_STONEGUARDIAN)
+{
+	aivar[AIV_MAXDISTTOWP] = 2000;
+	aivar[AIV_ORIGINALFIGHTTACTIC] = FAI_STONEGUARDIAN;
+	aivar[AIV_ENEMYOVERRIDE] = TRUE;
+	b_setvisuals_stoneguardian();
+};
+
+instance STONEGUARDIAN_ADANOSTEMPELENTRANCE_04(MST_ADDON_STONEGUARDIAN)
+{
+	aivar[AIV_MAXDISTTOWP] = 900;
+	aivar[AIV_ORIGINALFIGHTTACTIC] = FAI_STONEGUARDIAN;
+	aivar[AIV_ENEMYOVERRIDE] = TRUE;
+	b_setvisuals_stoneguardian();
+};
+
+instance STONEGUARDIAN_TREASUREPITS_05A(MST_ADDON_STONEGUARDIAN)
+{
+	aivar[AIV_MAXDISTTOWP] = 3000;
+	aivar[AIV_ORIGINALFIGHTTACTIC] = FAI_STONEGUARDIAN;
+	aivar[AIV_ENEMYOVERRIDE] = TRUE;
+	b_setvisuals_stoneguardian();
+};
+
+instance STONEGUARDIAN_TREASUREPITS_05B(MST_ADDON_STONEGUARDIAN)
+{
+	aivar[AIV_MAXDISTTOWP] = 2700;
+	aivar[AIV_ORIGINALFIGHTTACTIC] = FAI_STONEGUARDIAN;
+	aivar[AIV_ENEMYOVERRIDE] = TRUE;
+	b_setvisuals_stoneguardian();
+};
+
+instance STONEGUARDIAN_TREASUREPITS_05C(MST_ADDON_STONEGUARDIAN)
+{
+	aivar[AIV_MAXDISTTOWP] = 2900;
+	aivar[AIV_ORIGINALFIGHTTACTIC] = FAI_STONEGUARDIAN;
+	aivar[AIV_ENEMYOVERRIDE] = TRUE;
+	b_setvisuals_stoneguardian();
+};
+
+instance STONEGUARDIAN_TREASUREPITS_05D(MST_ADDON_STONEGUARDIAN)
+{
+	aivar[AIV_MAXDISTTOWP] = 2400;
+	aivar[AIV_ORIGINALFIGHTTACTIC] = FAI_STONEGUARDIAN;
+	aivar[AIV_ENEMYOVERRIDE] = TRUE;
+	b_setvisuals_stoneguardian();
+};
+
+instance STONEGUARDIAN_TREASUREPITS_05E(MST_ADDON_STONEGUARDIAN)
+{
+	aivar[AIV_MAXDISTTOWP] = 2900;
+	aivar[AIV_ORIGINALFIGHTTACTIC] = FAI_STONEGUARDIAN;
+	aivar[AIV_ENEMYOVERRIDE] = TRUE;
+	b_setvisuals_stoneguardian();
+};
+
+instance STONEGUARDIAN_TREASUREPITS_05F(MST_ADDON_STONEGUARDIAN)
+{
+	aivar[AIV_MAXDISTTOWP] = 2800;
+	aivar[AIV_ORIGINALFIGHTTACTIC] = FAI_STONEGUARDIAN;
+	aivar[AIV_ENEMYOVERRIDE] = TRUE;
+	b_setvisuals_stoneguardian();
+};
+
+instance STONEGUARDIAN_TREASUREPITS_09A(MST_ADDON_STONEGUARDIAN)
+{
+	aivar[AIV_MAXDISTTOWP] = 2400;
+	aivar[AIV_ORIGINALFIGHTTACTIC] = FAI_STONEGUARDIAN;
+	aivar[AIV_ENEMYOVERRIDE] = TRUE;
+	b_setvisuals_stoneguardian();
+};
+
+instance STONEGUARDIAN_TREASUREPITS_09B(MST_ADDON_STONEGUARDIAN)
+{
+	aivar[AIV_MAXDISTTOWP] = 2400;
+	aivar[AIV_ORIGINALFIGHTTACTIC] = FAI_STONEGUARDIAN;
+	aivar[AIV_ENEMYOVERRIDE] = TRUE;
+	b_setvisuals_stoneguardian();
+};
+
+instance STONEGUARDIAN_TREASUREPITS_09C(MST_ADDON_STONEGUARDIAN)
+{
+	aivar[AIV_MAXDISTTOWP] = 2000;
+	aivar[AIV_ORIGINALFIGHTTACTIC] = FAI_STONEGUARDIAN;
+	aivar[AIV_ENEMYOVERRIDE] = TRUE;
+	b_setvisuals_stoneguardian();
+};
+
+instance STONEGUARDIAN_TREASUREPITS_09D(MST_ADDON_STONEGUARDIAN)
+{
+	aivar[AIV_MAXDISTTOWP] = 2400;
+	aivar[AIV_ORIGINALFIGHTTACTIC] = FAI_STONEGUARDIAN;
+	aivar[AIV_ENEMYOVERRIDE] = TRUE;
+	b_setvisuals_stoneguardian();
+};
+
+instance STONEGUARDIAN_TREASUREPITS_09E(MST_ADDON_STONEGUARDIAN)
+{
+	aivar[AIV_MAXDISTTOWP] = 2700;
+	aivar[AIV_ORIGINALFIGHTTACTIC] = FAI_STONEGUARDIAN;
+	aivar[AIV_ENEMYOVERRIDE] = TRUE;
+	b_setvisuals_stoneguardian();
+};
+
+instance STONEGUARDIAN_TREASUREPITS_09F(MST_ADDON_STONEGUARDIAN)
+{
+	aivar[AIV_MAXDISTTOWP] = 2900;
+	aivar[AIV_ORIGINALFIGHTTACTIC] = FAI_STONEGUARDIAN;
+	aivar[AIV_ENEMYOVERRIDE] = TRUE;
+	b_setvisuals_stoneguardian();
+};
+
+instance STONEGUARDIAN_RHADEMES_14A(MST_ADDON_STONEGUARDIAN)
+{
+	aivar[AIV_MAXDISTTOWP] = 700;
+	aivar[AIV_ORIGINALFIGHTTACTIC] = FAI_STONEGUARDIAN;
+	aivar[AIV_ENEMYOVERRIDE] = TRUE;
+	b_setvisuals_stoneguardian();
+};
+
+instance STONEGUARDIAN_RHADEMES_14B(MST_ADDON_STONEGUARDIAN)
+{
+	aivar[AIV_MAXDISTTOWP] = 1200;
+	aivar[AIV_ORIGINALFIGHTTACTIC] = FAI_STONEGUARDIAN;
+	aivar[AIV_ENEMYOVERRIDE] = TRUE;
+	b_setvisuals_stoneguardian();
+};
+
+instance STONEGUARDIAN_RHADEMES_14C(MST_ADDON_STONEGUARDIAN)
+{
+	aivar[AIV_MAXDISTTOWP] = 700;
+	aivar[AIV_ORIGINALFIGHTTACTIC] = FAI_STONEGUARDIAN;
+	aivar[AIV_ENEMYOVERRIDE] = TRUE;
+	b_setvisuals_stoneguardian();
+};
+
+instance STONEGUARDIAN_RHADEMES_14D(MST_ADDON_STONEGUARDIAN)
+{
+	aivar[AIV_MAXDISTTOWP] = 700;
+	aivar[AIV_ORIGINALFIGHTTACTIC] = FAI_STONEGUARDIAN;
+	aivar[AIV_ENEMYOVERRIDE] = TRUE;
+	b_setvisuals_stoneguardian();
+};
+
+instance STONEGUARDIAN_RHADEMES_14E(MST_ADDON_STONEGUARDIAN)
+{
+	aivar[AIV_MAXDISTTOWP] = 1200;
+	aivar[AIV_ORIGINALFIGHTTACTIC] = FAI_STONEGUARDIAN;
+	aivar[AIV_ENEMYOVERRIDE] = TRUE;
+	b_setvisuals_stoneguardian();
+};
+
+instance STONEGUARDIAN_RHADEMES_14F(MST_ADDON_STONEGUARDIAN)
+{
+	aivar[AIV_MAXDISTTOWP] = 700;
+	aivar[AIV_ORIGINALFIGHTTACTIC] = FAI_STONEGUARDIAN;
+	aivar[AIV_ENEMYOVERRIDE] = TRUE;
+	b_setvisuals_stoneguardian();
+};
+
