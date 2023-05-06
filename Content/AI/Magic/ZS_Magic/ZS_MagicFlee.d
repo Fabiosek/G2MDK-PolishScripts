@@ -1,5 +1,5 @@
 
-func int b_stopmagicflee()
+func void b_stopmagicflee()
 {
 	Npc_PercDisable(self,PERC_ASSESSDAMAGE);
 	Npc_SetTarget(self,other);
@@ -34,12 +34,10 @@ func void zs_magicflee()
 		if(randy == 0)
 		{
 			AI_PlayAniBS(self,"T_STAND_2_FEAR_VICTIM1",BS_STAND);
-		};
-		if(randy == 1)
+		} else if(randy == 1)
 		{
 			AI_PlayAniBS(self,"T_STAND_2_FEAR_VICTIM2",BS_STAND);
-		};
-		if(randy == 2)
+		} else if(randy == 2)
 		{
 			AI_PlayAniBS(self,"T_STAND_2_FEAR_VICTIM3",BS_STAND);
 		};
