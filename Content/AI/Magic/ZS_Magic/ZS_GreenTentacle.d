@@ -35,7 +35,7 @@ func void zs_greententacle()
 	{
 		if(self.guild < GIL_SEPERATOR_HUM)
 		{
-			var int randy; randy = Hlp_Random(3);
+			var int randy; // randy = Hlp_Random(3);
 			if(randy == 0)
 			{
 				AI_PlayAniBS(self,"T_STAND_2_GREENTENTACLEA_VICTIM",BS_UNCONSCIOUS);
