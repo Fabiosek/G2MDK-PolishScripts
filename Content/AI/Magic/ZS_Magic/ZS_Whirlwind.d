@@ -22,7 +22,7 @@ func void b_stopwhirlwind()
 	};
 };
 
-func int zs_whirlwind()
+func void zs_whirlwind()
 {
 	Npc_PercEnable(self,PERC_ASSESSMAGIC,b_restartwhirlwind);
 	Npc_StopAni(self,"S_WHIRLWIND_VICTIM");
