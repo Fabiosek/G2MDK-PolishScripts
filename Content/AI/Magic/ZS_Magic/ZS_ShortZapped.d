@@ -16,7 +16,7 @@ func void b_stopshortzapped()
 	};
 };
 
-func int zs_shortzapped()
+func void zs_shortzapped()
 {
 	Npc_PercEnable(self,PERC_ASSESSSTOPMAGIC,b_stopshortzapped);
 	if(!Npc_HasBodyFlag(self,BS_FLAG_INTERRUPTABLE))
