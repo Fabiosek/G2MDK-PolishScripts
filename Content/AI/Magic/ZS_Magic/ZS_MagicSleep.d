@@ -1,5 +1,5 @@
 
-func int b_stopmagicsleep()
+func void b_stopmagicsleep()
 {
 	Npc_PercDisable(self,PERC_ASSESSDAMAGE);
 	b_say_overlay(self,other,"$WHATWASSTHAT");
