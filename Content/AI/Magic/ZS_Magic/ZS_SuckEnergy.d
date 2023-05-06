@@ -25,7 +25,7 @@ func void b_stopsuckenergy()
 	};
 };
 
-func int zs_suckenergy()
+func void zs_suckenergy()
 {
 	Npc_PercEnable(self,PERC_ASSESSMAGIC,b_restartsuckenergy);
 	Npc_StopAni(self,"S_SUCKENERGY_VICTIM");
