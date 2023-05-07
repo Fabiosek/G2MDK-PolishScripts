@@ -2,7 +2,7 @@
 var int b_removequarhodron_onetime;
 var int b_removerhademes_onetime;
 
-func int b_removeghost()
+func void b_removeghost()
 {
 	if(GHOST_SCKNOWSHOW2GETINADANOSTEMPEL == TRUE)
 	{
