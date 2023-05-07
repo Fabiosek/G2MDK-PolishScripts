@@ -22,9 +22,8 @@ func void b_stopgreententacle()
 	};
 };
 
-func int zs_greententacle()
+func void zs_greententacle()
 {
-	var int randy;
 	Npc_PercEnable(self,PERC_ASSESSMAGIC,b_restartgreententacle);
 	Npc_PercEnable(self,PERC_ASSESSDAMAGE,b_assessdamage);
 	Npc_StopAni(self,"s_GreententacleA_Victim");
@@ -36,15 +35,14 @@ func int zs_greententacle()
 	{
 		if(self.guild < GIL_SEPERATOR_HUM)
 		{
+			var int randy; // randy = Hlp_Random(3);
 			if(randy == 0)
 			{
 				AI_PlayAniBS(self,"T_STAND_2_GREENTENTACLEA_VICTIM",BS_UNCONSCIOUS);
-			};
-			if(randy == 1)
+			} else if(randy == 1)
 			{
 				AI_PlayAniBS(self,"T_STAND_2_GREENTENTACLEB_VICTIM",BS_UNCONSCIOUS);
-			};
-			if(randy == 2)
+			} else if(randy == 2)
 			{
 				AI_PlayAniBS(self,"T_STAND_2_GREENTENTACLEC_VICTIM",BS_UNCONSCIOUS);
 			};
