@@ -1257,7 +1257,7 @@ Story\B_Content\B_CaptainConditions.d
 Story\B_Content\B_CaptainCallsAllOnBoard.d
 Story\B_Content\C_Addon_Knows_Schnaps.d
 Story\B_Content\B_Addon_PiratesGoHome.d
-Story\Dialoge\DIA_AddonBAU_4300_Cabalorn.d
+Story\Dialoge\DIA_Addon_BAU_4300_Cavalorn.d
 Story\Dialoge\DIA_bdt_10004_addon_finn.d
 Story\Dialoge\DIA_bdt_10005_addon_wache_02.d
 Story\Dialoge\DIA_bdt_10008_addon_bandit.d
@@ -1410,7 +1410,7 @@ Story\Dialoge\DIA_djg_709_rethon.d
 Story\Dialoge\DIA_djg_710_kjorn.d
 Story\Dialoge\DIA_djg_711_godar.d
 Story\Dialoge\DIA_djg_712_hokurn.d
-Story\Dialoge\DAI_DJG_713_Biff.d
+Story\Dialoge\DIA_DJG_713_Biff.d
 Story\Dialoge\DIA_djg_713_biff_di.d
 Story\Dialoge\DIA_djg_713_biff_nw.d
 Story\Dialoge\DIA_djg_714_jan.d
